@@ -31,11 +31,16 @@
 <div class="header-social-links">
     <input type="text" class="sidebar-search" placeholder="search">
     <i class="bi bi-search"></i>
-    <a href="cart.php"><i class="bi bi-cart"></i></a>
-    <!-- <a class="nav-link" href="cart.php"><i class="bi bi-cart"></i> <span id="cart-item" class="badge badge-danger"></span></a> -->
-    
+    <a href="cart.php"><i class="bi bi-cart"></i></a>    
     
     <div class="cartcount">
-        1
+        <?php
+            $sql = "SELECT * FROM `id_order` WHERE user_id = '$user_id'";
+            if ($result = mysqli_query($conn, $sql)) {
+            $rowcount=mysqli_num_rows($result);
+            printf($rowcount);
+            mysqli_free_result($result);
+            }
+        ?>
     </div>
 </div>

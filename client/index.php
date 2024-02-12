@@ -5,6 +5,15 @@ include_once '../admin/db_connect.php';
 $user_id = $_SESSION['user_id'];
 $fullname = $_SESSION['fullname'];
 
+if($fullname == '') {
+    echo '<script type ="text/JavaScript">';  
+    echo 'alert("Not Login")';  
+    echo '</script>';  
+} else {
+    echo '<script type ="text/JavaScript">';  
+    echo 'alert("Login")';  
+    echo '</script>'; 
+}
 $sharp = "#";
 $bgm = "BGM";
 ?>
