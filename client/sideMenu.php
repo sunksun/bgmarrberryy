@@ -35,7 +35,7 @@
     
     <div class="cartcount">
         <?php
-            $sql = "SELECT * FROM `id_order` WHERE user_id = '$user_id'";
+            $sql = "SELECT * FROM `id_order` WHERE user_id = '$user_id' AND order_status = 'UnComplete'";
             if ($result = mysqli_query($conn, $sql)) {
             $rowcount=mysqli_num_rows($result);
             printf($rowcount);
